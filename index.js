@@ -11,6 +11,7 @@ mongoose
 
 
 app.use("/user", require("./users"));
+app.use("/adminUser", require("./adminUser"));
 
 
 const PORT = 3000;
