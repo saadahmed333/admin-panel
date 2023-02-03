@@ -1,5 +1,4 @@
 const express = require('express');
-const user = require('./constants/index')
 const app = express();
 const mongoose = require("mongoose");
 app.use(express.json())
@@ -12,6 +11,7 @@ mongoose
 
 
 app.use("/user", require("./users"));
+app.use("/adminUser", require("./adminUser"));
 
 
 const PORT = 3000;

@@ -1,8 +1,8 @@
 
-const User = require('../modals/userModal')
-const addUser = async (req,res) => {
+const AdminUser = require('../modals/adminUser')
+const addAdmin = async (req,res) => {
     try {
-        const user = new User(req.body);
+        const user = new AdminUser(req.body);
     console.log("req.body", req.body);
     const response = await user.save();
     console.log("res", response);
@@ -12,4 +12,4 @@ const addUser = async (req,res) => {
         res.status(401).send({ status: 401, message: "email address are same" });
     }
 }
-module.exports = addUser
+module.exports = addAdmin
