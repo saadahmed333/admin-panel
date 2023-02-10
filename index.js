@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
 const express = require('express');
+const parse = require('body-parser')
 const cors = require('cors')
 const app = express();
 app.use(express.json())
-app.use(cors());
+
+var corsOptions = {
+  origin: "http://localhost:8081"
+}
+
+app.use(cors(corsOptions));
+app.use(parse.json());
 mongoose
 .connect("mongodb+srv://saad:saad@cluster0.io7ziqi.mongodb.net/?retryWrites=true&w=majority")
 .then(() => console.log("Connected!"))
